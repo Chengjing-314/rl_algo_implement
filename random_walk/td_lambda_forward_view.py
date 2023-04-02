@@ -20,7 +20,7 @@ class TdLambda:
 
 def main(num_episodes = 1000):
     rd = RandomWalk()
-    td = TdLambda()
+    td = TdLambda(lda = 0.8, alpha = 0.01)
     thres = 1e-3
     
     for _ in tqdm(range(num_episodes)):

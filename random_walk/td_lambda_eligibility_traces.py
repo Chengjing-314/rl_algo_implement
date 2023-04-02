@@ -20,7 +20,7 @@ class TdLambda:
 
 def main(num_episodes = 1000):
     rd = RandomWalk() # default is 19 states
-    td = TdLambda()
+    td = TdLambda(lda = 0.8, alpha = 0.01)
     
     states = range(rd.num_states + 1)
     
