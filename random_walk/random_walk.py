@@ -2,7 +2,7 @@ import numpy as np
 
 class RandomWalk:
     
-    def __init__(self, num_states = 19, discrete = True, step_size = 1, max_steps = 50):
+    def __init__(self, num_states = 19, discrete = True, step_size = 1, max_steps = 1000):
         self.num_states = num_states
         self.start = (num_states - 1) // 2
         self.left_terminal = 0
@@ -16,6 +16,12 @@ class RandomWalk:
         
     def reset(self):
         self.current_state = self.start
+        self.done = False
+        return self.current_state
+    
+    def random_reset(self):
+        self.current_state = np.random.choice(range(1, self.num_states))
+        self.done = False
         return self.current_state
         
     
