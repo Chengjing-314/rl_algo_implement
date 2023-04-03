@@ -39,6 +39,7 @@ def main(num_episodes = 1000):
         for t in range(T):
             gt_lambda = 0 
             state = states[t]
+            lambda_power = 1
             for n in range(1, T-t):
                 gt_tn = np.sum(rewards[t+1:t+n+1]) + td.value(states[t+n]) # sum from t to t+n, r1 + r2 + ... + rn + V(Sn)
                 lambda_power = np.power(td.lda, n-1) # lambda^(n-1)
